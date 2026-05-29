@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Responsive Design</title>
+
+    <style>
+
+        body{
+            font-size: 20px;
+        }
+
+        .menu{
+            display: flex;
+            gap: 20px;
+        }
+
+        @media screen and (max-width:768px){
+
+            .menu{
+                flex-direction: column;
+            }
+
+            body{
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="menu">
+
+        <div>Home</div>
+        <div>Events</div>
+        <div>Contact</div>
+
+    </div>
+
+</body>
+</html>

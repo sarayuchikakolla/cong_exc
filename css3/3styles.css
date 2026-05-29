@@ -1,0 +1,19 @@
+/* Body Styles */
+
+body{
+    background-color: #f2f2f2;
+}
+
+/* Heading Styles */
+
+h1{
+    color: blue;
+    text-align: center;
+}
+
+/* Paragraph Styles */
+
+p{
+    font-size: 20px;
+    color: darkred;
+}
