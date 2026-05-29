@@ -138,6 +138,10 @@
 -- 'https://portal.com/resources/html5_docs',
 -- '2025-06-25 15:00:00');
 
+
+--1
+
+
 -- SELECT u.full_name,
 --        e.title,
 --        e.city,
@@ -151,6 +155,10 @@
 -- AND u.city=e.city
 -- ORDER BY e.start_date;
 
+
+--2
+
+
 -- SELECT e.title,
 --        AVG(f.rating) AS avg_rating
 -- FROM Events e
@@ -160,6 +168,10 @@
 -- HAVING COUNT(f.feedback_id)>=10
 -- ORDER BY avg_rating DESC;
 
+
+--3
+
+
 -- SELECT *
 -- FROM Users
 -- WHERE user_id NOT IN (
@@ -168,11 +180,18 @@
 --     WHERE registration_date >= CURDATE() - INTERVAL 90 DAY
 -- );
 
+--4
+
+
 -- SELECT event_id,
 --        COUNT(*) AS total_sessions
 -- FROM Sessions
 -- WHERE HOUR(start_time) BETWEEN 10 AND 12
 -- GROUP BY event_id;
+
+
+--5
+
 
 -- SELECT u.city,
 --        COUNT(DISTINCT r.registration_id)
@@ -184,12 +203,20 @@
 -- ORDER BY total_registrations DESC
 -- LIMIT 5;
 
+
+--6
+
+
 -- SELECT e.title,
 --        COUNT(r.resource_id) AS total_resources
 -- FROM Events e
 -- LEFT JOIN Resources r
 -- ON e.event_id = r.event_id
 -- GROUP BY e.event_id,e.title;
+
+
+--7
+
 
 -- SELECT u.full_name,
 --        f.comments,
@@ -202,6 +229,10 @@
 -- ON f.event_id = e.event_id
 -- WHERE f.rating < 3;
 
+
+--8
+
+
 -- SELECT e.title,
 --        COUNT(s.session_id) AS total_sessions
 -- FROM Events e
@@ -210,6 +241,10 @@
 -- WHERE e.status='upcoming'
 -- GROUP BY e.event_id,e.title;
 
+
+--9
+
+
 -- SELECT u.full_name,
 --        e.status,
 --        COUNT(e.event_id) AS total_events
@@ -217,6 +252,10 @@
 -- JOIN Events e
 -- ON u.user_id = e.organizer_id
 -- GROUP BY u.full_name,e.status;
+
+
+--10
+
 
 -- SELECT e.title
 -- FROM Events e
@@ -227,11 +266,19 @@
 -- WHERE f.feedback_id IS NULL
 -- GROUP BY e.title;
 
+
+--11
+
+
 -- SELECT registration_date,
 --        COUNT(*) AS total_users
 -- FROM Users
 -- WHERE registration_date >= CURDATE() - INTERVAL 7 DAY
 -- GROUP BY registration_date;
+
+
+--12
+
 
 -- SELECT e.title,
 --        COUNT(s.session_id) AS total_sessions
@@ -248,12 +295,20 @@
 --     ) temp
 -- );
 
+
+--13
+
+
 -- SELECT e.city,
 --        AVG(f.rating) AS average_rating
 -- FROM Events e
 -- JOIN Feedback f
 -- ON e.event_id = f.event_id
 -- GROUP BY e.city;
+
+
+--14
+
 
 -- SELECT e.title,
 --        COUNT(r.registration_id)
@@ -265,6 +320,10 @@
 -- ORDER BY total_registrations DESC
 -- LIMIT 3;
 
+
+--15
+
+
 -- SELECT s1.event_id,
 --        s1.title AS session1,
 --        s2.title AS session2
@@ -275,6 +334,10 @@
 -- AND s1.start_time < s2.end_time
 -- AND s1.end_time > s2.start_time;
 
+
+--16
+
+
 -- SELECT *
 -- FROM Users
 -- WHERE registration_date >= CURDATE() - INTERVAL 30 DAY
@@ -283,17 +346,29 @@
 --     FROM Registrations
 -- );
 
+
+--17
+
+
 -- SELECT speaker_name,
 --        COUNT(*) AS total_sessions
 -- FROM Sessions
 -- GROUP BY speaker_name
 -- HAVING COUNT(*) > 1;
 
+
+--18
+
+
 -- SELECT e.title
 -- FROM Events e
 -- LEFT JOIN Resources r
 -- ON e.event_id = r.event_id
 -- WHERE r.resource_id IS NULL;
+
+
+--19
+
 
 -- SELECT e.title,
 --        COUNT(r.registration_id)
@@ -307,6 +382,11 @@
 -- WHERE e.status='completed'
 -- GROUP BY e.event_id,e.title;
 
+
+
+--20
+
+
 -- SELECT u.full_name,
 --        COUNT(DISTINCT r.event_id)
 --        AS events_attended,
@@ -319,6 +399,10 @@
 -- ON u.user_id = f.user_id
 -- GROUP BY u.user_id,u.full_name;
 
+
+--21
+
+
 -- SELECT u.full_name,
 --        COUNT(f.feedback_id)
 --        AS total_feedbacks
@@ -329,6 +413,10 @@
 -- ORDER BY total_feedbacks DESC
 -- LIMIT 5;
 
+
+--22
+
+
 -- SELECT user_id,
 --        event_id,
 --        COUNT(*) AS duplicate_count
@@ -336,12 +424,20 @@
 -- GROUP BY user_id,event_id
 -- HAVING COUNT(*) > 1;
 
+
+--23
+
+
 -- SELECT MONTH(registration_date) AS month,
 --        COUNT(*) AS total_registrations
 -- FROM Registrations
 -- WHERE registration_date >= CURDATE() - INTERVAL 12 MONTH
 -- GROUP BY MONTH(registration_date);
 
+
+--24
+
+  
 -- SELECT e.title,
 --        AVG(
 --        TIMESTAMPDIFF(
@@ -354,8 +450,12 @@
 -- ON e.event_id = s.event_id
 -- GROUP BY e.event_id,e.title;
 
-SELECT e.title
-FROM Events e
-LEFT JOIN Sessions s
-ON e.event_id = s.event_id
-WHERE s.session_id IS NULL;
+
+--25
+
+
+-- SELECT e.title
+-- FROM Events e
+-- LEFT JOIN Sessions s
+-- ON e.event_id = s.event_id
+-- WHERE s.session_id IS NULL;
